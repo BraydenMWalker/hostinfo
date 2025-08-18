@@ -7,7 +7,7 @@ import signal
 from io import StringIO, BytesIO
 
 # Import the module to test
-from host_info_server import (
+from hostinfo_server import (
     get_host_info,
     SimpleHTTPRequestHandler,
     run_web_server,
@@ -32,7 +32,7 @@ class TestHostInfoServer(unittest.TestCase):
         # Verify result
         self.assertEqual(result, expected)
     
-    @patch('host_info_server.get_host_info')
+    @patch('hostinfo_server.get_host_info')
     def test_do_GET(self, mock_get_host_info):
         """Test that SimpleHTTPRequestHandler.do_GET properly serves host info"""
         # Setup test data - using a simple string
@@ -98,7 +98,7 @@ class TestHostInfoServer(unittest.TestCase):
         self.assertIn('Termination requested', output)
     
     @patch('signal.signal')
-    @patch('host_info_server.run_web_server')
+    @patch('hostinfo_server.run_web_server')
     def test_main(self, mock_run_web_server, mock_signal):
         """Test that main sets up signal handler and starts server"""
         # Save original sys.argv and replace with test values
