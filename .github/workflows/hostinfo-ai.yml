@@ -1,4 +1,4 @@
-name: Host Info Server Build Automation
+name: Host Info AI
 
 on:
   push:
