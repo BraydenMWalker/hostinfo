@@ -89,6 +89,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./python
+          load: true
           push: false
           tags: student/hostinfo:latest
 
